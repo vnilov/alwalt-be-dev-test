@@ -1,0 +1,32 @@
+version: '3.9'
+
+services:
+  php:
+    container_name: application
+    build:
+      dockerfile: .docker/php/Dockerfile
+      context: .
+      args:
+        PROJECT_ROOT: ${PROJECT_ROOT}
+        PUBLIC_DIR: ${PUBLIC_DIR}
+    tty: true
+    volumes:
+      - "./:${PROJECT_ROOT}:delegated"
+      - "static:${PUBLIC_DIR}"
+
+  nginx:
+    container_name: webserver
+    build:
+      dockerfile: .docker/nginx/Dockerfile
+      context: .
+      args:
+        PROJECT_ROOT: ${PROJECT_ROOT}
+    volumes:
+      - 'static:/var/www/:ro'
+    ports:
+      - 8080:80
+    depends_on:
+      - php
+
+volumes:
+  static:
