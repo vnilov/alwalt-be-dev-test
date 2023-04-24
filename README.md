@@ -8,6 +8,7 @@ Assumptions such as:
 - I didn't implement any logging layer
 - I didn't add DI like Symfony DI or PHP-DI
 - I tried to keep the code and its structure as simple as possible
+- I added .env file to the repo since it doesn't contain any sensitive data and since it's still a test task :)
 
 ## Installation
 In order to run the project, please follow the steps below:
