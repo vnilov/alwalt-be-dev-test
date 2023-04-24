@@ -15,7 +15,7 @@ In order to run the project, please follow the steps below:
 1. Clone the repository
 2. Run `make run`
 3. Add the following line to your `/etc/hosts` file: `127.0.0.1 image.anwalt.local`, this is necessary to access the project because this hostname I added to the Nginx config
-4. That's all. You can access the project by the following URL: `http://image.anwalt.local:8080` -  you should see the Nginx welcome page
+4. That's all. You can access the project by the following URL: `http://image.anwalt.local:8080/test.html`
 
 ## Usage
 The project has only one endpoint: `http://image.anwalt.local:8080/{filename}/` which accepts only `GET` requests with at least modifier parameter
